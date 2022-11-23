@@ -4,6 +4,7 @@ import About from "../components/About";
 import Footer from "../components/Footer";
 import PrincipalMessage from "../components/PrincipalMessage";
 import TicMessage from "../components/TicMessage";
+import MiniGallery from "../components/MiniGallery";
 
 export default function Home(){
     return (
@@ -12,6 +13,7 @@ export default function Home(){
             <About/>
             <PrincipalMessage/>
             <TicMessage/>
+            <MiniGallery/>
             <Footer/>
         </div>
     )
