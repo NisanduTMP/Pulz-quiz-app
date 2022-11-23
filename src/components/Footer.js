@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer(){
     return(
@@ -6,18 +7,18 @@ export default function Footer(){
             <div className="upper-footer">
                 <div className="useful-links">
                     <h1 className="footer-mini-h">Useful Links</h1>
-                    <a className="useful-links-inner" href="#">
+                    <Link className="useful-links-inner" to="/">
+                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <span className="useful-links-inner-span">Home</span>
+                    </Link>
+                    <Link className="useful-links-inner" to="/about">
                         <i class="fa-solid fa-face-smile footer-icons"></i>
                         <span className="useful-links-inner-span">About</span>
-                    </a>
-                    <a className="useful-links-inner" href="#">
+                    </Link>
+                    <Link className="useful-links-inner" to="#">
                         <i class="fa-solid fa-face-smile footer-icons"></i>
                         <span className="useful-links-inner-span">About</span>
-                    </a>
-                    <a className="useful-links-inner" href="#">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
-                        <span className="useful-links-inner-span">About</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="socialmedia-links">
                     <h1 className="footer-mini-h">Social Medias</h1>
