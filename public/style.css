@@ -134,7 +134,7 @@ nav ul li a:hover{
     .checkbtn{
         display: block; 
     }
-    ul{
+    nav ul{
         position: fixed;
         width: 110%;
         height: 100vh;
@@ -190,6 +190,7 @@ nav ul li a:hover{
 
 .about-img-img{
     width:100%;
+    margin-left:10px;
     box-shadow: 4px 4px 20px rgb(0 0 0 / 75%);
 }
 
@@ -208,6 +209,10 @@ nav ul li a:hover{
     padding:2px;
     background-color: var(--main-color);
     margin:0 auto;
+}
+
+.about-text{
+    margin-left:50px;
 }
 
 .about-text-p{
@@ -252,6 +257,10 @@ nav ul li a:hover{
     .about-img{
         width:40%;
         margin: 0 auto;
+    }
+
+    .about-img-img{
+        margin-left: 0;
     }
     
     .about-text{
@@ -351,5 +360,125 @@ nav ul li a:hover{
     .footer-description{
         width:100%;
         margin-top:30px;
+    }
+}
+
+/*
+
+Principal Message Section
+
+*/
+
+.principal-message{
+    margin-top:80px;
+}
+
+.tic-message{
+    margin-top:60px;
+}
+
+.inner-principal-message,
+.inner-tic-message{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.inner-principal-message-quote-section,
+.inner-tic-message-quote-section{
+    width:60%;
+}
+
+.inner-principal-message-img-section,
+.inner-tic-message-img-section{
+    width:25%;
+}
+
+.inner-principal-message-img-section-img,
+.inner-tic-message-img-section-img{
+    width:100%;
+    box-shadow: 4px 4px 20px rgb(0 0 0 / 75%);
+}
+
+.inner-principal-message-quote-section{
+    margin-right:50px;
+}
+
+.inner-tic-message-quote-section{
+    margin-left: 50px;
+}
+
+.inner-principal-message-img-section-quote,
+.inner-tic-message-img-section-quote{
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 200%;
+}
+
+.fa-quote-left{
+    font-size:3rem;
+}
+
+.message-h-section{
+    margin-top: 50px;
+    margin-bottom:35px;
+}
+
+.message-h{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.message-h-underline{
+    width:5rem;
+    padding:2px;
+    background-color: var(--main-color);
+    margin:0 auto;
+}
+
+@media (max-width:1140px) {
+    .inner-principal-message-quote-section{
+        margin-top:0;
+        margin-right:50px;
+    }
+
+    .inner-tic-message-quote-section{
+        margin-top:0;
+        margin-left:50px;
+    }
+}
+
+@media (max-width:1050px) {
+    .fa-quote-left{
+        font-size:2rem;
+    }
+    .inner-principal-message-img-section-quote,
+    .inner-tic-message-img-section-quote{
+        line-height: 170%;
+    }
+}
+
+@media (max-width:870px){
+    .inner-principal-message,
+    .inner-tic-message{
+        flex-direction: column;
+    }
+
+    .inner-principal-message-img-section,
+    .inner-tic-message-img-section{
+        margin-right: auto;
+        margin-left: auto;
+        width:35%;
+    }
+
+    .inner-principal-message-quote-section{
+        order:1;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .inner-tic-message-quote-section{
+        margin-right: auto;
+        margin-left: auto;
     }
 }
