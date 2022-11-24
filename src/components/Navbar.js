@@ -13,7 +13,7 @@ export default function Navbar(){
                 <ul>
                     <li><Link className="active" to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
-                    <li><Link to="#">Projects</Link></li>
+                    <li><Link to="/alumni">Alumni</Link></li>
                     <li><Link to="#">Contact</Link></li>
                 </ul>
             </nav>
