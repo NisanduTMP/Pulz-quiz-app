@@ -14,7 +14,8 @@ export default function Navbar(){
                     <li><Link className="active" to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/alumni">Alumni</Link></li>
-                    <li><Link to="#">Contact</Link></li>
+                    <li><Link to="/achievements">Achievements</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
                 </ul>
             </nav>
         </header>

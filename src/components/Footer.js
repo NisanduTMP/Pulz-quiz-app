@@ -19,6 +19,14 @@ export default function Footer(){
                         <i class="fa-solid fa-face-smile footer-icons"></i>
                         <span className="useful-links-inner-span">Alumni</span>
                     </Link>
+                    <Link className="useful-links-inner" to="/achievements">
+                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <span className="useful-links-inner-span">Achievements</span>
+                    </Link>
+                    <Link className="useful-links-inner" to="/gallery">
+                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <span className="useful-links-inner-span">Gallery</span>
+                    </Link>
                 </div>
                 <div className="socialmedia-links">
                     <h1 className="footer-mini-h">Social Medias</h1>
