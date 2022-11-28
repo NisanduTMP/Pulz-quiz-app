@@ -9,7 +9,7 @@ export default function Logo(){
         },
         {
             id:2,
-            item:'Logo format from piet mondrian\'s artwork',
+            item:'Logo format from Piet Mondrian\'s artwork',
             meaning:'Modernization of visual art'
         },
         {
@@ -40,7 +40,7 @@ export default function Logo(){
                     <h1 className="h">Logo And It's Meanings</h1>
                     <div className="h-underline"></div>
                 </div>
-                <img src="/img/logo2.png" className="inner-logo-section-logo"/>
+                <img src="/img/logo3.png" className="inner-logo-section-logo"/>
                 <div className="inner-logo-section-details">
                     {details.map((detail)=>{
                         return(
