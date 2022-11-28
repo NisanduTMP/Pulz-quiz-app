@@ -8,11 +8,14 @@ export default function GalleryPage(){
     const [isLoading,setIsLoading] = React.useState(false)
     return(
         <div>
-            {isLoading ? <Loading/> : <div>
+            {/* {isLoading ? <Loading/> : <div>
                 <Navbar/>
                 <Gallery setIsLoading={setIsLoading}/>
                 <Footer/>    
-            </div>}
+            </div>} */}
+            <Navbar/>
+            <Gallery/>
+            <Footer/> 
             
         </div>
     )

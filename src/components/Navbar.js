@@ -9,7 +9,7 @@ export default function Navbar(){
                 <label for="check" className="checkbtn">
                     <i className="fas fa-bars"></i>
                 </label>
-                <label className="logo"><a href="#main">Test</a></label>
+                <label className="logo"><Link to="/"><img src="/img/heading.png" className="logo-img"/></Link></label>
                 <ul>
                     <li><Link className="active" to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>

@@ -8,39 +8,39 @@ export default function Footer(){
                 <div className="useful-links">
                     <h1 className="footer-mini-h">Useful Links</h1>
                     <Link className="useful-links-inner" to="/">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <i class="fa-solid fa-square footer-icons"></i>
                         <span className="useful-links-inner-span">Home</span>
                     </Link>
                     <Link className="useful-links-inner" to="/about">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <i class="fa-solid fa-square footer-icons"></i>
                         <span className="useful-links-inner-span">About</span>
                     </Link>
                     <Link className="useful-links-inner" to="/alumni">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <i class="fa-solid fa-square footer-icons"></i>
                         <span className="useful-links-inner-span">Alumni</span>
                     </Link>
                     <Link className="useful-links-inner" to="/achievements">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <i class="fa-solid fa-square footer-icons"></i>
                         <span className="useful-links-inner-span">Achievements</span>
                     </Link>
                     <Link className="useful-links-inner" to="/gallery">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
+                        <i class="fa-solid fa-square footer-icons"></i>
                         <span className="useful-links-inner-span">Gallery</span>
                     </Link>
                 </div>
                 <div className="socialmedia-links">
                     <h1 className="footer-mini-h">Social Medias</h1>
-                    <a className="socialmedia-links-inner" href="#">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
-                        <span className="socialmedia-links-inner-span">About</span>
+                    <a className="socialmedia-links-inner" href="https://www.facebook.com/" target='_blank'>
+                        <i class="fa-brands fa-facebook footer-icons footer-social-media-icons"></i>
+                        <span className="socialmedia-links-inner-span">Facebook</span>
                     </a>
-                    <a className="socialmedia-links-inner" href="#">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
-                        <span className="socialmedia-links-inner-span">About</span>
+                    <a className="socialmedia-links-inner" href="https://www.instagram.com/" target='_blank'>
+                        <i class="fa-brands fa-instagram footer-icons footer-social-media-icons"></i>
+                        <span className="socialmedia-links-inner-span">Instagram</span>
                     </a>
-                    <a className="socialmedia-links-inner" href="#">
-                        <i class="fa-solid fa-face-smile footer-icons"></i>
-                        <span className="socialmedia-links-inner-span">About</span>
+                    <a className="socialmedia-links-inner" href="https://www.youtube.com/" target='_blank'>
+                        <i class="fa-brands fa-youtube footer-icons footer-social-media-icons"></i>
+                        <span className="socialmedia-links-inner-span">Youtube</span>
                     </a>
                 </div>
                 <div className="footer-description">
@@ -50,7 +50,7 @@ export default function Footer(){
             </div>
             <div className="footer-line-break"></div>
             <div className="below-footer">
-                <p className="below-footer-p">Copyright @ ACVAS</p>
+                <p className="below-footer-p">Copyright 2022 &copy; ACVAS</p>
             </div>
         </div>
     )

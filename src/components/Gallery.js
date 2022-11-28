@@ -2,27 +2,34 @@ import React from 'react'
 import { collection,addDoc,getDocs,getDoc,onSnapshot,query,where,deleteDoc,doc} from "firebase/firestore";
 import {database} from '../firebaseConfig'
 import {Link, useNavigate} from 'react-router-dom'
+import Loading from "../components/Loading";
 
-export default function Gallery({setIsLoading}){
+export default function Gallery(){
     const [data,setData] = React.useState([])
     const [selectedData,setSelectedData] = React.useState([])
     const [currentPagination,setCurrentPagination] = React.useState(1)
     const collectionRef = collection(database,'gallery')
+    const [isLoading,setIsLoading] = React.useState(false)
     const navigate = useNavigate()
     React.useEffect(()=>{
-        setIsLoading(true)
         async function fetchData(){
-            const data = await getDocs(collectionRef)
-            const records = data.docs.map((item)=>{
-                return {...item.data(),id:item.id}
-            })
-            setData(records)
-            if(!records){
-                navigate('/')
+            try {
+                setIsLoading(true)
+                const data = await getDocs(collectionRef)
+                const records = data.docs.map((item)=>{
+                    return {...item.data(),id:item.id}
+                })
+                setData(records)
+                if(!records){
+                    navigate('/')
+                }
+                setIsLoading(false)
+            } catch (error) {
+                console.log(error)
             }
+            
         }
         fetchData()
-        setIsLoading(false)
     },[0])
     // React.useEffect(()=>{
     //     if(data.length > 0){
@@ -63,10 +70,9 @@ export default function Gallery({setIsLoading}){
         }
     }
     return(
-        <div id="gallery">
+        <div>
+            {isLoading ? <Loading/> : <div id="gallery">
             <div className='gallery-section'>
-                {/* <button onClick={()=>pagination(0,10)} style={{marginTop:100}}>1</button>
-                <button onClick={()=>pagination(10,20)}>2</button> */}
                 <div className="h-section">
                     <h1 className="h">Gallery</h1>
                     <div className="h-underline"></div>
@@ -94,6 +100,7 @@ export default function Gallery({setIsLoading}){
                     {data.length > 30 ? <a href="#gallery" onClick={()=>pagination(30,40,4)} className={currentPagination === 4? "active-pagination gallery-pagination-button":"gallery-pagination-button"}>4</a> : ""}
                 </div>
             </div>
+        </div>}
         </div>
     )
 }

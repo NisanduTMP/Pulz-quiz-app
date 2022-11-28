@@ -65,7 +65,7 @@ label.logo {
     position: absolute;
     color: var(--light-main);
     font-size: 2rem;
-    line-height: 80px;
+    line-height: 90px;
     left: 50px;
     font-weight: bold;
     cursor: pointer;
@@ -120,6 +120,9 @@ nav ul li a:hover {
     display: none;
 }
 
+.logo-img{
+    width:200px;
+}
 
 @media (max-width: 952px) {
     label.logo {
@@ -316,7 +319,7 @@ nav ul li a:hover {
 .below-footer {
     padding: 20px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .footer-mini-h {
@@ -336,8 +339,13 @@ nav ul li a:hover {
 }
 
 .footer-icons {
-    margin-right: 0.1rem;
+    margin-right: 0.5rem;
     color: var(--main-color);
+    font-size: 0.5rem;
+}
+
+.footer-social-media-icons{
+    font-size: 1rem;
 }
 
 .socialmedia-links-inner:hover,
@@ -831,27 +839,72 @@ Mini Gallery
 
 .inner-logo-section-logo {
     margin-top: 30px;
-    width: 50%;
+    width: 25%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 4px 4px 20px rgb(0 0 0 / 75%);
 }
 
-@media (max-width:930px) {
+.inner-logo-section-details{
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+.inner-logo-detial-section-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.inner-logo-detial-section-card-item{
+    width:35%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.inner-logo-detial-section-card-hypen{
+    width:10%;
+    font-size:1.5rem;
+    text-align: center;
+}
+
+.inner-logo-detial-section-card-meaning{
+    width:40%;
+    font-size: 1.1rem;
+}
+
+.fa-circle{
+    margin-right:20px;
+    font-size: 0.75rem;
+    color: var(--main-color);
+    margin-top:10px;
+}
+
+/* @media (max-width:930px) {
     .inner-logo-section-logo {
-        width: 70%;
+        width: 0%;
+    }
+} */
+
+@media (max-width:870px) {
+    .inner-logo-section-details{
+        width:95%;
     }
 }
 
-@media (max-width:700px) {
+@media (max-width:760px) {
     .inner-logo-section-logo {
-        width: 80%;
+        width: 30%;
     }
 }
 
 @media (max-width:600px) {
     .inner-logo-section-logo {
-        width: 90%;
+        width: 35%;
     }
 }
 
@@ -1019,10 +1072,11 @@ Mini Gallery
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top:20%;
-    border: 16px solid #f3f3f3;
+    margin-top:40vh;
+    margin-bottom: 40vh;
+    border: 16px solid var(--secondary-color);
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid var(--main-color);
     width: 120px;
     height: 120px;
     -webkit-animation: spin 2s linear infinite; /* Safari */
