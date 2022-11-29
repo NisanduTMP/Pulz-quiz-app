@@ -1223,7 +1223,7 @@ Mini Gallery
 */
 .home-banner{
     background-image:linear-gradient(rgba(0, 0, 0, 0.85),rgba(0, 0, 0, 0.85)), url('/img/proposalr.jpg');
-    height:100vh;
+    height:750px;
     background-size: cover;
 	width:100%;
 }
@@ -1234,7 +1234,7 @@ Mini Gallery
 }
 
 .inner-banner-section{
-    padding-top:230px;
+    padding-top:250px;
     padding-left:70px;
     color:var(--secondary-color);
     width:50%;
@@ -1292,10 +1292,17 @@ Mini Gallery
     100% { transform: translateY(-30px); }
 }
 
+@media (max-width:1365px) {
+    .inner-banner-section-image{
+        margin-top:250px;
+    }
+}
+
 @media (max-width:1190px){
-    .inner-banner-section{
-        padding-top:190px;
-    }   
+    .inner-banner-section-image{
+        width:40%;
+        margin-top:250px;
+    } 
 }
 
 @media (max-width:1100px){
@@ -1304,20 +1311,20 @@ Mini Gallery
     }   
     .inner-banner-section-image{
         width:40%;
-        margin-top:230px;
+        margin-top:260px;
     }
 }
 
 @media (max-width:900px){
     .inner-banner-section{
-        padding-top:220px;
+        padding-top:250px;
     }  
     .inner-banner-section-title{
-        font-size: 4rem;
+        font-size: 4.4rem;
     }   
-    .inner-banner-section-button{
-        padding:12px;
-        font-size: 1.1rem;
+    .inner-banner-section-image{
+        width:40%;
+        margin-top:280px;
     }
 }
 
@@ -1325,11 +1332,11 @@ Mini Gallery
     .inner-banner-section-image{
         width: 50%;
         order:-1;
-        margin-top:150px;
+        margin-top:160px;
         display: block;
         margin-right: auto;
         margin-left: auto;
-        margin-bottom:-60px;
+        margin-bottom:-150px;
     }
     .inner-banner-section-image-img{
         width:50%;
@@ -1344,13 +1351,30 @@ Mini Gallery
     }
 }
 
-@media (max-width:620px){
+@media (max-width:740px){
     .inner-banner-section-image{
         width: 60%;
-        margin-bottom:-60px;
+        margin-bottom:-140px;
     }
     
     .inner-banner-section-title{
         font-size: 3rem;
+    }
+}
+
+@media (max-width:640px){
+    .inner-banner-section-image{
+        width: 70%;
+        margin-bottom:-130px;
+    }
+}
+
+@media (max-width:540px){
+    .inner-banner-section-image{
+        width: 80%;
+        margin-bottom:-150px;
+    }
+    .inner-banner-section-title{
+        font-size: 2.7rem;
     }
 }
