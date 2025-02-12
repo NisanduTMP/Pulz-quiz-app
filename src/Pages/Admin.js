@@ -64,15 +64,19 @@ export default function Admin(){
         localStorage.setItem("correctAns",JSON.stringify(-1));
         localStorage.setItem("timerOn",JSON.stringify(0));
         localStorage.setItem("timer",JSON.stringify(-1));
+        localStorage.setItem("canViewAns",JSON.stringify(0));
         setcr(0);
     }
 
     const func3 = ()=>{
         const val = JSON.parse(localStorage.getItem("canViewAns"));
-        if(val==0) return;
         const obj = d.filter((ob)=>ob.id == cr);
         const correctAns = obj[0].correct
-        if(typeof correctAns == "number") localStorage.setItem("correctAns",JSON.stringify(correctAns))
+        if(val==0&&typeof correctAns == "number") return;
+        localStorage.setItem("canViewAns",JSON.stringify(1));
+        console.log(correctAns);
+        console.log(typeof correctAns)
+        if(typeof correctAns == "number" || typeof correctAns == "string") localStorage.setItem("correctAns",JSON.stringify(correctAns))
     }
 
     const func5 = ()=>{
@@ -143,6 +147,10 @@ export default function Admin(){
     const setfr = (id)=>{
         localStorage.setItem("currentState",JSON.stringify(id))
         localStorage.setItem("current",JSON.stringify(0));
+        localStorage.setItem("correctAns",JSON.stringify(-1));
+        localStorage.setItem("timerOn",JSON.stringify(0));
+        localStorage.setItem("timer",JSON.stringify(-1));
+        localStorage.setItem("canViewAns",JSON.stringify(0));
         setCrState(id);
         setcr(0);
     }
@@ -164,6 +172,10 @@ export default function Admin(){
         localStorage.setItem("canViewAns",JSON.stringify(0));
     }
 
+    const stopTimer = ()=>{
+        localStorage.setItem("timerOn",JSON.stringify(100));
+    }
+
     return(
         <>
             <div>
@@ -173,7 +185,7 @@ export default function Admin(){
                 
                 <button onClick={()=>setfr(0)}>First Round</button>
                 <button onClick={()=>setfr(2)}>Second Round</button>
-                <button onClick={()=>setfr(1)}>Second Round Banner</button>
+                <button onClick={()=>setfr(1)}>Banner</button>
                 {items}
 
 
@@ -185,6 +197,7 @@ export default function Admin(){
                 <button onClick={()=>timerF()}>Timer On</button>
                 <button onClick={()=>func3()}>Show Correct Answer</button>
                 <p>
+                <button onClick={()=>stopTimer()}>Stop Timer</button>
                 <button onClick={()=>timerFreeze()}>Freeze</button>
                 <button onClick={()=>resetTimer()}>ResetTimer</button>
                 </p>

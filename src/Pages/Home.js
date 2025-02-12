@@ -81,7 +81,7 @@ export default function Home(){
                     
                     </>:
                     <>
-                        <h1>Please wait a while to start second round</h1>
+                        <h1>Pulz and analytiq logo</h1>
                     </>
                     }
                     </>:<></>}

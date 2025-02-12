@@ -29,7 +29,7 @@ export default function Comp(){
   React.useEffect(() => {
     const handleStorageChange = () => {
         const val = JSON.parse(localStorage.getItem("correctAns"));
-        if(val>0||val) setCorrect(val);
+        if(val>0||val||typeof val != "number") setCorrect(val);
     };
 
     window.addEventListener("storage", handleStorageChange);
@@ -82,6 +82,7 @@ export default function Comp(){
     React.useEffect(() => {
         if(!isTimerOn) return;
         setTimer(JSON.parse(localStorage.getItem("timer")))
+        if(isTimerOn==100) setTimer(0);
     }, [isTimerOn]);
 
     React.useEffect(()=>{
@@ -102,10 +103,14 @@ export default function Comp(){
             <h3>{d.ans2} {correct==2?"(correct)":""}</h3>
             <h3>{d.ans3} {correct==3?"(correct)":""}</h3>
             <h3>{d.ans4} {correct==4?"(correct)":""}</h3> */}
-            {cans == 1 ? <><h3>{item.ans1} {correct==1?"(correct)":""}</h3>
+            {cans == 1&&typeof item.correct == "number" ? <><h3>{item.ans1} {correct==1?"(correct)":""}</h3>
             <h3>{item.ans2} {correct==2?"(correct)":""}</h3>
             <h3>{item.ans3} {correct==3?"(correct)":""}</h3>
             <h3>{item.ans4} {correct==4?"(correct)":""}</h3></> : <></>}
+
+            {cans==1&&typeof item.correct != "number" ? <>
+                {correct!=-1?<h1>{correct}</h1>:<></>}
+            </>:<></>}
         </div>:<div></div>}</>
     )
 }
