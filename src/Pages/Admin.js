@@ -1,4 +1,5 @@
 import React from "react";
+import styles from '../components/admin.css'
 import {data} from "../components/data"
 export default function Admin(){
     const arr = data;
@@ -114,13 +115,13 @@ export default function Admin(){
            slicedArr = d.slice(firstRound,end);
         }
         slicedArr.map((de)=>{
-            stuff.push(<button onClick={()=>func1(de.id)}><h1>{de.id>firstRound ? de.id-firstRound : de.id} {de.isticked?"(c)":""}</h1></button>)
+            stuff.push(<button className="admin-buttons" onClick={()=>func1(de.id)}><h1>{de.id>firstRound ? de.id-firstRound : de.id} {de.isticked?"(c)":""}</h1></button>)
         })
         setItems(stuff)
         const its = [];
         slicedArr.map((ob)=>{
             if(ob.isticked==1){
-                its.push(<button onClick={()=>func4(ob.id)}><h1>{ob.id>firstRound ? ob.id-firstRound : ob.id}</h1></button>)
+                its.push(<button className="admin-buttons" onClick={()=>func4(ob.id)}><h1>{ob.id>firstRound ? ob.id-firstRound : ob.id}</h1></button>)
             }
         })
         setMarked(its);
@@ -183,32 +184,36 @@ export default function Admin(){
 
                 <h2>Current Round : {crState==0&&"First Round"} {crState==1&&"Second Round Banner"} {crState==2&&"Second Round"}</h2>
                 
-                <button onClick={()=>setfr(0)}>First Round</button>
-                <button onClick={()=>setfr(2)}>Second Round</button>
-                <button onClick={()=>setfr(1)}>Banner</button>
+                <button onClick={()=>setfr(0)}  className={crState==0 ? "admin-buttons admin-yellow-btn":"admin-buttons"}>First Round</button>
+                <button onClick={()=>setfr(2)} className={crState&&crState==2 ? "admin-buttons admin-yellow-btn":"admin-buttons"}>Second Round</button>
+                <button onClick={()=>setfr(1)} className={crState&&crState==1 ? "admin-buttons admin-yellow-btn":"admin-buttons"}>Banner</button>
+                <hr/>
+                {crState==0&&<hr className="admin-danger"/>}
+                <div className="admin-extra-m">
                 {items}
-
+                </div>
+                {crState==0&&<hr className="admin-danger"/>}
 
                 {cr&&cr!=0?
                 <>
                 <h1>Current Problem : {cr} {crState==2&&<span>({cr-firstRound})</span>}</h1>
 
-                <button onClick={()=>func5()}>Show All Answers</button>
-                <button onClick={()=>timerF()}>Timer On</button>
-                <button onClick={()=>func3()}>Show Correct Answer</button>
+                <button onClick={()=>func5()} className="admin-buttons admin-green-btn">Show All Answers</button>
+                <button onClick={()=>timerF()} className="admin-buttons admin-green-btn">Timer On</button>
+                <button onClick={()=>func3()} className="admin-buttons admin-green-btn">Show Correct Answer</button>
                 <p>
-                <button onClick={()=>stopTimer()}>Stop Timer</button>
-                <button onClick={()=>timerFreeze()}>Freeze</button>
-                <button onClick={()=>resetTimer()}>ResetTimer</button>
+                <button onClick={()=>stopTimer()} className="admin-buttons">Stop Timer</button>
+                <button onClick={()=>timerFreeze()} className="admin-buttons">Freeze</button>
+                <button onClick={()=>resetTimer()} className="admin-buttons">ResetTimer</button>
                 </p>
-                {crState==2&&<button onClick={()=>func2()}>Back</button>}
-                {crState==0&&<button onClick={()=>gonext(cr)}>Next</button>}
+                {crState==2&&<button onClick={()=>func2()} className="admin-buttons admin-blue-btn">Back</button>}
+                {crState==0&&<button onClick={()=>gonext(cr)} className="admin-buttons admin-blue-btn">Next</button>}
                 
                 
                 </>
                 :<></>}
-                {crState==2&&<button onClick={()=>cl()}>Clear</button>}
-                {crState==0&&<button onClick={()=>goinit()}>Init</button>}
+                {crState==2&&<button onClick={()=>cl()} className="admin-buttons admin-red-btn">Clear</button>}
+                {crState==0&&<button onClick={()=>goinit()} className="admin-buttons admin-red-btn">Init</button>}
                 <h1>UnMark</h1>
                 {marked}
                 
