@@ -1,0 +1,77 @@
+.banner {
+    background: #00030b;
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner #subCategoriesHero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 100vh;
+    min-height: 100svh;
+    gap: 1em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.banner .analytIQ { /* Uncomment depending on the LED Wall Quality */
+    /* background: linear-gradient(#00030b00,#00030b00,#00030b),url(../statics/bgGrid.svg),linear-gradient(#00030b00,#00030b),linear-gradient(109.6deg,#000 11.2%,#91530b 91.1%); */
+}
+
+.banner .analytIQ img {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 50%;
+}
+
+.banner .analytIQ h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner .analytIQ .footer_logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+}
+
+.banner .analytIQ .footer_logos img {
+    display: block;
+    height: auto;
+    width: 60px;
+    padding-right: 120px;
+}
+
+.banner .analytIQ .footer_logos img:last-child {
+    height: auto;
+    width: 80px !important;
+    padding-right: 0;
+}
