@@ -75,15 +75,19 @@ export default function Home() {
           <>
             {crState == 0 || crState == 2 ? (
               <>
+               <div className="rounds">
+                <div className="number">
                 <h1>{crState == 0 ? "First" : "Second"} Round</h1>
+                </div>
 
                 {crState == 2 ? (
                   <>{items}</>
                 ) : (
-                  <div>
+                  <div className="instructions">
                     <h1>Here are the instrcutions for Round 1</h1>
                   </div>
                 )}
+                </div>
               </>
             ) : (
               <>
