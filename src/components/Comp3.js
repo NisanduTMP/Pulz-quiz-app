@@ -1,5 +1,6 @@
 import React from "react";
 import {data} from "./data"
+import "./comp.css"
 export default function Comp(){
     const arr = data;
     const [d,setd] = React.useState(() => JSON.parse(localStorage.getItem("data")) || []);
@@ -95,18 +96,35 @@ export default function Comp(){
     },[])
     
     return(
-        <>{(cr&&cr!=0&&item)?<div>
-           <h1>{item.problem}</h1>
+        <>{(cr&&cr!=0&&item)?<div className="quiz_questions">
+           {item.img ? 
+            <>
+             <img src={item.img} width="300" height={300}/> 
+             <h1> {item.id}. {item.problem} </h1>
+            </> : 
+            <h1 className="non_img_h1"> {item.id}. {item.problem} </h1>
+           }
            <h2>{timer>=0?timer:""}</h2>
-           {item.img&& <img src={item.img} width="300" height={300}/>}
             {/* <h3>{d.ans1} {correct==1?"(correct)":""}</h3>
             <h3>{d.ans2} {correct==2?"(correct)":""}</h3>
             <h3>{d.ans3} {correct==3?"(correct)":""}</h3>
             <h3>{d.ans4} {correct==4?"(correct)":""}</h3> */}
-            {cans == 1&&typeof item.correct == "number" ? <><h3>{item.ans1} {correct==1?"(correct)":""}</h3>
-            <h3>{item.ans2} {correct==2?"(correct)":""}</h3>
-            <h3>{item.ans3} {correct==3?"(correct)":""}</h3>
-            <h3>{item.ans4} {correct==4?"(correct)":""}</h3></> : <></>}
+            {item.img ? 
+             <>
+               {cans == 1&&typeof item.correct == "number" ? <><h3>a. {item.ans1} {correct==1?"(Correct Answer)":""}</h3>
+               <h3>b. {item.ans2} {correct==2?"(Correct Answer)":""}</h3>
+               <h3>c. {item.ans3} {correct==3?"(Correct Answer)":""}</h3>
+               <h3>d. {item.ans4} {correct==4?"(Correct Answer)":""}</h3></> : <></>}
+             </> : 
+             <>
+              <div className="non_img_ans">
+               {cans == 1&&typeof item.correct == "number" ? <><h3>a. {item.ans1} {correct==1?"(Correct Answer)":""}</h3>
+               <h3>b. {item.ans2} {correct==2?"(Correct Answer)":""}</h3>
+               <h3>c. {item.ans3} {correct==3?"(Correct Answer)":""}</h3>
+               <h3>d. {item.ans4} {correct==4?"(Correct Answer)":""}</h3></> : <></>}
+               </div>
+             </>
+            }
 
             {cans==1&&typeof item.correct != "number" ? <>
                 {correct!=-1?<h1>{correct}</h1>:<></>}
